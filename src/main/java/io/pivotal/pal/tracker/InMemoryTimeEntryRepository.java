@@ -31,11 +31,7 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository {
   }
 
   public TimeEntry update(long timeEntryId, TimeEntry timeEntry) {
-    // validate input
-//    if (timeEntryId > currentTimeEntryId -1 || timeEntryId < 1)
-//    {
-//      throw new IllegalArgumentException("Bad value for timeEntryId");
-//    }
+
     if(timeEntries.containsKey(timeEntryId)){
       TimeEntry updatedTimeEntry = new TimeEntry(timeEntryId, timeEntry.getProjectId(),
           timeEntry.getUserId(), timeEntry.getDate(), timeEntry.getHours());
@@ -49,11 +45,6 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository {
   }
 
   public void delete(long timeEntryId) {
-    // validate input
-//    if (timeEntryId > currentTimeEntryId -1 || timeEntryId < 1)
-//    {
-//      throw new IllegalArgumentException("Bad value for timeEntryId");
-//    }
 
     if(this.find(timeEntryId) != null){
       timeEntries.remove(timeEntryId);
