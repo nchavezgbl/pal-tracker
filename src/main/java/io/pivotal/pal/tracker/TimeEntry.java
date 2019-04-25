@@ -47,6 +47,10 @@ public class TimeEntry {
     return hours;
   }
 
+  public void setId(long id) {
+    this.id = id;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
